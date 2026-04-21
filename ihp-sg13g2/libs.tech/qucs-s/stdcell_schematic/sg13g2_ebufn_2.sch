@@ -1,6 +1,6 @@
 <Qucs Schematic 25.2.0>
 <Properties>
-  <View=71,121,2241,1293,0.948802,0,9>
+  <View=143,162,1374,878,1.22346,0,0>
   <Grid=5,5,1>
   <DataSet=sg13g2_ebufn_2.dat>
   <DataDisplay=sg13g2_ebufn_2.dpl>
@@ -14,11 +14,23 @@
   <FrameText3=Revision: 1.0>
 </Properties>
 <Symbol>
-  <.PortSym 40 20 1 0 Z>
-  <.PortSym 40 60 2 0 A>
-  <.PortSym 40 100 3 0 TE_B>
-  <.PortSym 40 140 4 0 VDD>
-  <.PortSym 40 180 5 0 VSS>
+  <.PortSym 30 0 1 180 Z>
+  <Text 30 3 10 #800000 0 "Z">
+  <.PortSym -30 0 2 0 A>
+  <Text -30 3 10 #800000 0 "A">
+  <.PortSym -30 -30 3 0 TE_B>
+  <Text -30 -27 10 #800000 0 "TE-B">
+  <Line 2 -30 -32 0 #000080 2 1>
+  <Line 2 -18 0 -12 #000080 2 1>
+  <Line -15 0 -15 0 #000080 2 1>
+  <Line -15 -15 30 15 #000080 2 1>
+  <Line 15 0 -30 15 #000080 2 1>
+  <Line -15 15 0 -30 #000080 2 1>
+  <Line 30 0 -15 0 #000080 2 1>
+  <EArc -3 -8 10 -10 0 5760 #000080 2 1>
+  <.ID 5 25 "EBUFN">
+  <.PortSym -5 -55 4 0 VDD>
+  <.PortSym -10 35 5 0 VSS>
 </Symbol>
 <Components>
   <Port Z 1 1065 470 -23 12 0 2 "1" 1 "out" 0>
