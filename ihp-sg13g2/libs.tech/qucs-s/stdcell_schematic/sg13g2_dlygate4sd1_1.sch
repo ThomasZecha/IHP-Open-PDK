@@ -1,6 +1,6 @@
 <Qucs Schematic 25.2.0>
 <Properties>
-  <View=-143,-146,2405,1404,0.365804,0,0>
+  <View=143,162,1374,878,1.22346,0,0>
   <Grid=5,5,1>
   <DataSet=sg13g2_dlygate4sd1_1.dat>
   <DataDisplay=sg13g2_dlygate4sd1_1.dpl>
@@ -14,10 +14,18 @@
   <FrameText3=Revision: 1.0>
 </Properties>
 <Symbol>
-  <.PortSym 40 20 1 0 X>
-  <.PortSym 40 60 2 0 A>
-  <.PortSym 40 100 3 0 VDD>
-  <.PortSym 40 140 4 0 VSS>
+  <.PortSym 30 0 1 180 X>
+  <Text 30 3 10 #800000 0 "X">
+  <.PortSym -30 0 2 0 A>
+  <Text -30 3 10 #800000 0 "A">
+  <Line -15 0 -15 0 #000080 2 1>
+  <Line -15 -15 30 15 #000080 2 1>
+  <Line 15 0 -30 15 #000080 2 1>
+  <Line -15 15 0 -30 #000080 2 1>
+  <Line 30 0 -15 0 #000080 2 1>
+  <.ID 10 20 "DLYGATE4SD">
+  <.PortSym -5 -35 3 0 VDD>
+  <.PortSym -5 35 4 0 VSS>
 </Symbol>
 <Components>
   <Port X 1 1130 500 -23 12 0 2 "1" 1 "out" 0>
