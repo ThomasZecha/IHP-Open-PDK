@@ -1,6 +1,6 @@
 <Qucs Schematic 25.2.0>
 <Properties>
-  <View=349,332,1658,1077,1.78309,335,37>
+  <View=262,332,1055,793,1.90022,0,0>
   <Grid=5,5,1>
   <DataSet=sg13g2_antennanp.dat>
   <DataDisplay=sg13g2_antennanp.dpl>
@@ -14,9 +14,22 @@
   <FrameText3=Revision: 1.0>
 </Properties>
 <Symbol>
-  <.PortSym 40 20 1 0 A>
-  <.PortSym 40 60 2 0 VDD>
-  <.PortSym 40 100 3 0 VSS>
+  <.PortSym -30 -10 1 0 A>
+  <Text -30 -7 10 #800000 0 "A">
+  <Line -30 -10 25 0 #000080 2 1>
+  <Line 40 5 -45 0 #000080 2 1>
+  <Line 40 -25 -45 0 #000080 2 1>
+  <Line 40 -25 0 30 #000080 2 1>
+  <Line -5 5 0 -30 #000080 2 1>
+  <Line 30 -10 -10 0 #000080 2 1>
+  <Line 5 -10 -10 0 #000080 2 1>
+  <Line 20 -17 0 14 #000080 2 1>
+  <Line 20 -10 -15 -7 #000080 2 1>
+  <Line 20 -10 -15 7 #000080 2 1>
+  <Line 5 -3 0 -14 #000080 2 1>
+  <.ID 5 15 "ANTENNA">
+  <.PortSym -5 -45 2 0 VDD>
+  <.PortSym -5 25 3 0 VSS>
 </Symbol>
 <Components>
   <Port A 1 655 500 -23 12 0 0 "1" 1 "in" 0>
