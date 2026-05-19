@@ -434,15 +434,37 @@ def generate_klayout_switches(arguments, layout_path: str) -> dict:
     return switches
 
 
+def _get_required_klayout_version() -> Tuple[Tuple[int, int, int], str]:
+    """
+    Read the required KLayout version from the repo-level versions.txt
+    (single source of truth). Returns ((major, minor, patch), raw_string).
+    """
+    versions_txt = Path(__file__).resolve().parents[5] / "versions.txt"
+    try:
+        with open(versions_txt, "r") as f:
+            for line in f:
+                parts = line.strip().split()
+                if len(parts) == 2 and parts[0] == "klayout":
+                    return tuple(int(x) for x in parts[1].split(".")), parts[1]
+    except (OSError, ValueError) as e:
+        logging.error(f"Could not read klayout version from {versions_txt}: {e}")
+        exit(1)
+    logging.error(f"klayout entry not found in {versions_txt}")
+    exit(1)
+
+
 def check_klayout_version():
     """
-    Checks if the installed KLayout version meets the minimum required version (>= 0.29.11).
+    Checks if the installed KLayout version meets the required version
+    specified in the repo-level versions.txt.
 
     Raises
     ------
     SystemExit
         If KLayout is not installed or version is below the required minimum.
     """
+    required_tuple, required_str = _get_required_klayout_version()
+
     try:
         klayout_version_output = os.popen("klayout -b -v").read().strip()
     except Exception as e:
@@ -468,12 +490,12 @@ def check_klayout_version():
         )
         exit(1)
 
-    if (major, minor, patch) < (0, 29, 11):
-        logging.error("Minimum required KLayout version is 0.29.11.")
+    if (major, minor, patch) < required_tuple:
+        logging.error(f"Minimum required KLayout version is {required_str} (from versions.txt).")
         logging.error(f"Your version: {version_str}")
         exit(1)
 
-    logging.info(f"KLayout version detected: {version_str}")
+    logging.info(f"KLayout version detected: {version_str} (required >= {required_str})")
 
 
 def check_layout_path(layout_path: str) -> str:

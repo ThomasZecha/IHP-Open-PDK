@@ -41,11 +41,32 @@ GOLDEN_LAY_NUM = 222
 PATH_WIDTH = 0.01
 
 
+def _get_required_klayout_version():
+    """
+    Read the required KLayout version from the repo-level versions.txt
+    (single source of truth). Returns ([major, minor, patch], raw_string).
+    """
+    versions_txt = Path(__file__).resolve().parents[6] / "versions.txt"
+    try:
+        with open(versions_txt, "r") as f:
+            for line in f:
+                parts = line.strip().split()
+                if len(parts) == 2 and parts[0] == "klayout":
+                    return [int(x) for x in parts[1].split(".")], parts[1]
+    except (OSError, ValueError) as e:
+        logging.error(f"Could not read klayout version from {versions_txt}: {e}")
+        exit(1)
+    logging.error(f"klayout entry not found in {versions_txt}")
+    exit(1)
+
+
 def check_klayout_version():
     """
     check_klayout_version checks KLayout version and ensures
-    it meets the minimum required version for the DRC.
+    it meets the required version specified in the repo-level versions.txt.
     """
+    min_required, required_str = _get_required_klayout_version()
+
     klayout_v_output = os.popen("klayout -b -v").read().strip()
 
     if not klayout_v_output:
@@ -54,7 +75,7 @@ def check_klayout_version():
         )
         exit(1)
 
-    version_str = klayout_v_output.split()[-1]  # Expecting format: 'KLayout 0.29.11'
+    version_str = klayout_v_output.split()[-1]
     version_parts = version_str.split(".")
 
     try:
@@ -63,18 +84,15 @@ def check_klayout_version():
         logging.error(f"Could not parse KLayout version from string: '{version_str}'")
         exit(1)
 
-    # Pad to 3 parts if necessary
     while len(klayout_v_list) < 3:
         klayout_v_list.append(0)
 
-    # Minimum required version: 0.29.11
-    min_required = [0, 29, 11]
     if klayout_v_list < min_required:
-        logging.error("Minimum required KLayout version is 0.29.11")
+        logging.error(f"Minimum required KLayout version is {required_str} (from versions.txt)")
         logging.error(f"Your KLayout version is: {version_str}")
         exit(1)
 
-    logging.info(f"KLayout version: {version_str}")
+    logging.info(f"KLayout version: {version_str} (required >= {required_str})")
 
 
 def _move_and_rename_golden_files(run_dir: Path, pattern_merged: str, pattern_golden: str):
