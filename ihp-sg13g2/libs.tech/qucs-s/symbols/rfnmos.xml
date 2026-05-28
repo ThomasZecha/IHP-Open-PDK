@@ -51,7 +51,7 @@
         <Parameter name="rfmode" unit="" default_value="1" show="false">
             <Description>RF mode switch</Description>
         </Parameter>
-        <Parameter name="mm_ok" unit="" default_value="0" show="false">
+        <Parameter name="mm_ok" unit="" default_value="1" show="false">
             <Description>[0,1]</Description>
         </Parameter>
     </Parameters>
