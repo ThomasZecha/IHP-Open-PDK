@@ -24,7 +24,7 @@ lvs_model=rfcmim
  l=10.0e-6
  wfeed=5.0e-6
  m=1
- mm_ok=0
+  mm_ok=1
  spiceprefix=X"
 drc="mim_drc @name @symname @model @w @l"
 }

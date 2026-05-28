@@ -24,7 +24,7 @@ l=0.3u
  Nx=1 
  body=sub!
  spiceprefix=X
- mm_ok=0
+  mm_ok=1
  "
 drc="svaricap_drc @name @symname @model @w @l @Nx"
 }
