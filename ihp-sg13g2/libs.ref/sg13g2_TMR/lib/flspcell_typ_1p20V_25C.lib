@@ -1,0 +1,785 @@
+/************************************************************************
+
+ Copyright 2024 IHP PDK Authors
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+    https://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License. 
+ 
+************************************************************************/
+
+library (flspcell_typ_1p20V_25C) {
+  comment : "IHP Microelectronics GmbH, 2025";
+  date : "$Date: Thu Nov 10 17:30:52 2025 $";
+  revision : "$Revision: 0.0.1 $";
+  delay_model : table_lookup;
+  capacitive_load_unit (1,pf);
+  current_unit : "1uA";
+  leakage_power_unit : "1pW";
+  pulling_resistance_unit : "1kohm";
+  time_unit : "1ns";
+  voltage_unit : "1V";
+  default_cell_leakage_power : 0;
+  default_fanout_load : 1;
+  default_inout_pin_cap : 0.006;
+  default_input_pin_cap : 0.006;
+  default_leakage_power_density : 0;
+  default_max_capacitance : 0.3;
+  default_max_fanout : 8;
+  default_max_transition : 2.5074;
+  default_output_pin_cap : 0;
+  default_wire_load_area : 0.29;
+  default_wire_load_capacitance : 0.0003;
+  default_wire_load_mode : "top";
+  default_wire_load_resistance : 0.0057;
+  in_place_swap_mode : match_footprint;
+  input_threshold_pct_fall : 50;
+  input_threshold_pct_rise : 50;
+  nom_process : 1;
+  nom_temperature : 25;
+  nom_voltage : 1.2;
+  output_threshold_pct_fall : 50;
+  output_threshold_pct_rise : 50;
+  slew_derate_from_library : 1;
+  slew_lower_threshold_pct_fall : 20;
+  slew_lower_threshold_pct_rise : 20;
+  slew_upper_threshold_pct_fall : 80;
+  slew_upper_threshold_pct_rise : 80;
+  operating_conditions (flspcell_typ_1p20V_25C) {
+    process : 1;
+    temperature : 25;
+    voltage : 1.2;
+  }
+  wire_load ("Zero") {
+    area : 0.01;
+    capacitance : 0.0001;
+    fanout_length (1, 0.01);
+    fanout_length (5, 0.01);
+    fanout_length (20, 0.01);
+    resistance : 0.0001;
+    slope : 1;
+  }
+  wire_load ("0_1k") {
+    area : 0.36;
+    capacitance : 0.0001;
+    fanout_length (1, 6.43);
+    fanout_length (5, 38.56);
+    fanout_length (20, 146.8);
+    resistance : 0.0035;
+    slope : 7.387;
+  }
+  wire_load ("0_5k") {
+    area : 0.36;
+    capacitance : 0.0001;
+    fanout_length (1, 7.89);
+    fanout_length (5, 47.32);
+    fanout_length (20, 169.4);
+    resistance : 0.0042;
+    slope : 10.99;
+  }
+  wire_load ("1k") {
+    area : 0.36;
+    capacitance : 0.0002;
+    fanout_length (1, 9.93);
+    fanout_length (5, 59.59);
+    fanout_length (20, 215.6);
+    resistance : 0.0053;
+    slope : 10.9;
+  }
+  wire_load ("2k") {
+    area : 0.36;
+    capacitance : 0.0002;
+    fanout_length (1, 11.68);
+    fanout_length (5, 70.11);
+    fanout_length (20, 239.5);
+    resistance : 0.0063;
+    slope : 16.87;
+  }
+  wire_load ("5k") {
+    area : 0.36;
+    capacitance : 0.0003;
+    fanout_length (1, 13.44);
+    fanout_length (5, 80.62);
+    fanout_length (20, 287.1);
+    resistance : 0.0072;
+    slope : 14.58;
+  }
+  wire_load ("10k") {
+    area : 0.37;
+    capacitance : 0.0003;
+    fanout_length (1, 14.9);
+    fanout_length (5, 89.39);
+    fanout_length (20, 381.6);
+    resistance : 0.008;
+    slope : 18.94;
+  }
+  wire_load ("30k") {
+    area : 0.37;
+    capacitance : 0.0003;
+    fanout_length (1, 17.53);
+    fanout_length (5, 105.2);
+    fanout_length (20, 515.5);
+    resistance : 0.0094;
+    slope : 24.61;
+  }
+  wire_load ("50k") {
+    area : 0.37;
+    capacitance : 0.0005;
+    fanout_length (1, 28.33);
+    fanout_length (5, 170);
+    fanout_length (20, 607.6);
+    resistance : 0.0152;
+    slope : 31.81;
+  }
+  wire_load ("100k") {
+    area : 0.39;
+    capacitance : 0.0009;
+    fanout_length (1, 49.37);
+    fanout_length (5, 296.2);
+    fanout_length (20, 812.1);
+    resistance : 0.0265;
+    slope : 40.22;
+  }
+  wire_load ("200k") {
+    area : 0.41;
+    capacitance : 0.0016;
+    fanout_length (1, 84.71);
+    fanout_length (5, 508.3);
+    fanout_length (20, 1051.7);
+    resistance : 0.0456;
+    slope : 52.68;
+  }
+  wire_load ("500k") {
+    area : 0.45;
+    capacitance : 0.0027;
+    fanout_length (1, 141.4);
+    fanout_length (5, 848.3);
+    fanout_length (20, 1527.1);
+    resistance : 0.076;
+    slope : 67.44;
+  }
+  wire_load_selection ("4_metls_routing") {
+    wire_load_from_area (0, 635, 0_1k);
+    wire_load_from_area (635, 3175, 0_5k);
+    wire_load_from_area (3175, 6350, 1k);
+    wire_load_from_area (6350, 12701, 2k);
+    wire_load_from_area (12701, 31752, 5k);
+    wire_load_from_area (31752, 63504, 10k);
+    wire_load_from_area (63504, 190512, 30k);
+    wire_load_from_area (190512, 317520, 50k);
+    wire_load_from_area (317520, 635040, 100k);
+    wire_load_from_area (635040, 1.27008e+06, 200k);
+    wire_load_from_area (1.27008e+06, 3.1752e+06, 500k);
+  }
+  default_wire_load : "1k";
+  default_operating_conditions : flspcell_typ_1p20V_25C;
+  default_wire_load_selection : "4_metls_routing";
+  lu_table_template (CONSTRAINT_4x4) {
+    variable_1 : constrained_pin_transition;
+    variable_2 : related_pin_transition;
+    index_1 ("0.0186, 0.51636, 1.263, 2.5074");
+    index_2 ("0.0186, 0.51636, 1.263, 2.5074");
+  }
+  power_lut_template (POWER_7x7ds1) {
+    variable_1 : input_transition_time;
+    variable_2 : total_output_net_capacitance;
+    index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+    index_2 ("0.001, 0.0234, 0.039, 0.0648, 0.108, 0.18, 0.3");
+  }
+  lu_table_template (TIMING_DELAY_7x7ds1) {
+    variable_1 : input_net_transition;
+    variable_2 : total_output_net_capacitance;
+    index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+    index_2 ("0.001, 0.0234, 0.039, 0.0648, 0.108, 0.18, 0.3");
+  }
+  lu_table_template (mpw_CONSTRAINT_4x4) {
+    variable_1 : constrained_pin_transition;
+    index_1 ("0.0186, 0.51636, 1.263, 2.5074");
+  }
+  power_lut_template (passive_POWER_7x1ds1) {
+    variable_1 : input_transition_time;
+    index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+  }
+  cell (sg13g2_dfrbpq1arx_1) {
+    area : 317.52;
+    cell_footprint : "dfrbpq";
+    cell_leakage_power : 2841.54;
+    leakage_power () {
+      value : 2604.65;
+      when : "!CLK&!D&!RESET_B&!Q";
+    }
+    leakage_power () {
+      value : 2551.33;
+      when : "!CLK&D&!RESET_B&!Q";
+    }
+    leakage_power () {
+      value : 2600.6;
+      when : "CLK&!D&!RESET_B&!Q";
+    }
+    leakage_power () {
+      value : 2547.28;
+      when : "CLK&D&!RESET_B&!Q";
+    }
+    leakage_power () {
+      value : 3186.7;
+      when : "!CLK&!D&RESET_B&Q";
+    }
+    leakage_power () {
+      value : 2693.11;
+      when : "!CLK&!D&RESET_B&!Q";
+    }
+    leakage_power () {
+      value : 3062.18;
+      when : "!CLK&D&RESET_B&Q";
+    }
+    leakage_power () {
+      value : 2992.34;
+      when : "!CLK&D&RESET_B&!Q";
+    }
+    leakage_power () {
+      value : 3146.1;
+      when : "CLK&!D&RESET_B&Q";
+    }
+    leakage_power () {
+      value : 2706.37;
+      when : "CLK&!D&RESET_B&!Q";
+    }
+    leakage_power () {
+      value : 3117.93;
+      when : "CLK&D&RESET_B&Q";
+    }
+    leakage_power () {
+      value : 2889.83;
+      when : "CLK&D&RESET_B&!Q";
+    }
+    pin (Q) {
+      direction : "output";
+      function : "IQ";
+      min_capacitance : 0.001;
+      max_capacitance : 0.3;
+      timing () {
+        related_pin : "CLK";
+        sdf_edges : start_edge;
+        timing_sense : non_unate;
+        timing_type : rising_edge;
+        cell_rise (TIMING_DELAY_7x7ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          index_2 ("0.001, 0.0234, 0.039, 0.0648, 0.108, 0.18, 0.3");
+          values ( \
+            "0.380162, 0.444292, 0.487422, 0.558803, 0.678148, 0.877053, 1.20893", \
+            "0.417447, 0.481659, 0.524844, 0.596187, 0.715588, 0.914928, 1.24628", \
+            "0.442754, 0.506827, 0.550001, 0.621323, 0.740712, 0.939615, 1.27148", \
+            "0.480404, 0.544534, 0.587705, 0.658996, 0.778358, 0.977436, 1.30917", \
+            "0.536279, 0.600356, 0.643507, 0.714838, 0.834179, 1.03315, 1.36476", \
+            "0.616368, 0.679802, 0.722917, 0.794277, 0.91361, 1.1126, 1.44417", \
+            "0.721426, 0.785552, 0.828725, 0.900045, 1.0194, 1.21832, 1.55037" \
+          );
+        }
+        rise_transition (TIMING_DELAY_7x7ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          index_2 ("0.001, 0.0234, 0.039, 0.0648, 0.108, 0.18, 0.3");
+          values ( \
+            "0.0144054, 0.103826, 0.166597, 0.270412, 0.44421, 0.733809, 1.21661", \
+            "0.0144057, 0.104333, 0.166707, 0.270483, 0.444332, 0.73417, 1.2167", \
+            "0.0144085, 0.104334, 0.166708, 0.270484, 0.444333, 0.734171, 1.21671", \
+            "0.0144095, 0.104335, 0.166709, 0.270485, 0.444334, 0.734172, 1.21676", \
+            "0.0144105, 0.104336, 0.16671, 0.270486, 0.444335, 0.734173, 1.21677", \
+            "0.0144115, 0.104337, 0.166711, 0.270487, 0.444336, 0.734174, 1.21678", \
+            "0.0144125, 0.104338, 0.166712, 0.270488, 0.444337, 0.734175, 1.21679" \
+          );
+        }
+        cell_fall (TIMING_DELAY_7x7ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          index_2 ("0.001, 0.0234, 0.039, 0.0648, 0.108, 0.18, 0.3");
+          values ( \
+            "0.411113, 0.485319, 0.523635, 0.582753, 0.679312, 0.839769, 1.10647", \
+            "0.448757, 0.522686, 0.560837, 0.62023, 0.717044, 0.877376, 1.14406", \
+            "0.473807, 0.547979, 0.58599, 0.645343, 0.742052, 0.902323, 1.16965", \
+            "0.510452, 0.584686, 0.622854, 0.681925, 0.778731, 0.938863, 1.20574", \
+            "0.561161, 0.635536, 0.673849, 0.732763, 0.82971, 0.98992, 1.25674", \
+            "0.628723, 0.70302, 0.741347, 0.8004, 0.897121, 1.05738, 1.32423", \
+            "0.715208, 0.789254, 0.827406, 0.886742, 0.983431, 1.14373, 1.41063" \
+          );
+        }
+        fall_transition (TIMING_DELAY_7x7ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          index_2 ("0.001, 0.0234, 0.039, 0.0648, 0.108, 0.18, 0.3");
+          values ( \
+            "0.0310047, 0.097496, 0.141528, 0.215599, 0.343017, 0.559327, 0.92098", \
+            "0.0310057, 0.097497, 0.141529, 0.2156, 0.343387, 0.559328, 0.920981", \
+            "0.0310067, 0.097498, 0.14153, 0.215629, 0.343388, 0.560071, 0.921914", \
+            "0.0310077, 0.097499, 0.141531, 0.21563, 0.343389, 0.560072, 0.921915", \
+            "0.0310087, 0.0975, 0.141532, 0.215631, 0.34339, 0.560073, 0.921916", \
+            "0.031072, 0.097501, 0.141533, 0.215632, 0.343391, 0.560074, 0.921917", \
+            "0.031073, 0.097502, 0.141534, 0.215637, 0.343392, 0.560075, 0.921918" \
+          );
+        }
+      }
+      timing () {
+        related_pin : "RESET_B";
+        sdf_edges : start_edge;
+        timing_sense : positive_unate;
+        timing_type : clear;
+        cell_fall (TIMING_DELAY_7x7ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          index_2 ("0.001, 0.0234, 0.039, 0.0648, 0.108, 0.18, 0.3");
+          values ( \
+            "0.484225, 0.558529, 0.596497, 0.655862, 0.752432, 0.912588, 1.17913", \
+            "0.527128, 0.60154, 0.639794, 0.698768, 0.795442, 0.955632, 1.22221", \
+            "0.562447, 0.636736, 0.674754, 0.734111, 0.830725, 0.990813, 1.25769", \
+            "0.620613, 0.694739, 0.733314, 0.792323, 0.889017, 1.04926, 1.31581", \
+            "0.709834, 0.783981, 0.822238, 0.881216, 0.977919, 1.13802, 1.4045", \
+            "0.834437, 0.908812, 0.946624, 1.00588, 1.10255, 1.26268, 1.52936", \
+            "1.00326, 1.07753, 1.11555, 1.17493, 1.27159, 1.43183, 1.69847" \
+          );
+        }
+        fall_transition (TIMING_DELAY_7x7ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          index_2 ("0.001, 0.0234, 0.039, 0.0648, 0.108, 0.18, 0.3");
+          values ( \
+            "0.0310649, 0.0974761, 0.141188, 0.215578, 0.343119, 0.559329, 0.920897", \
+            "0.0310659, 0.0974771, 0.141462, 0.215579, 0.34312, 0.559344, 0.920898", \
+            "0.0310669, 0.0974828, 0.141463, 0.215623, 0.343121, 0.559345, 0.921086", \
+            "0.0310679, 0.0974838, 0.141464, 0.215624, 0.343122, 0.559346, 0.921087", \
+            "0.0310689, 0.0974848, 0.141465, 0.215625, 0.343223, 0.559347, 0.921088", \
+            "0.0310699, 0.0974858, 0.141466, 0.215626, 0.343224, 0.559348, 0.921089", \
+            "0.0310709, 0.0974868, 0.141467, 0.215627, 0.343225, 0.559349, 0.921107" \
+          );
+        }
+      }
+      internal_power () {
+        related_pin : "CLK";
+        rise_power (POWER_7x7ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          index_2 ("0.001, 0.0234, 0.039, 0.0648, 0.108, 0.18, 0.3");
+          values ( \
+            "0.139979, 0.140392, 0.140319, 0.140215, 0.140031, 0.139706, 0.139402", \
+            "0.138628, 0.139051, 0.13895, 0.138826, 0.138672, 0.13845, 0.137985", \
+            "0.138186, 0.138561, 0.138531, 0.138412, 0.138185, 0.137849, 0.137582", \
+            "0.138358, 0.138723, 0.138634, 0.13858, 0.138542, 0.138142, 0.137719", \
+            "0.140405, 0.140798, 0.14081, 0.14065, 0.140391, 0.140497, 0.139878", \
+            "0.147013, 0.147557, 0.147511, 0.147524, 0.147467, 0.147197, 0.146744", \
+            "0.162816, 0.16325, 0.163131, 0.163111, 0.163067, 0.163014, 0.162931" \
+          );
+        }
+        fall_power (POWER_7x7ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          index_2 ("0.001, 0.0234, 0.039, 0.0648, 0.108, 0.18, 0.3");
+          values ( \
+            "0.156608, 0.15704, 0.157093, 0.157047, 0.156863, 0.156763, 0.156303", \
+            "0.155738, 0.156027, 0.156055, 0.15602, 0.155943, 0.155723, 0.155341", \
+            "0.156216, 0.156623, 0.15668, 0.156609, 0.156471, 0.156385, 0.156074", \
+            "0.157857, 0.158279, 0.158303, 0.158225, 0.158217, 0.157919, 0.157522", \
+            "0.161586, 0.16202, 0.162135, 0.162061, 0.161926, 0.161665, 0.16185", \
+            "0.169116, 0.169625, 0.169631, 0.169616, 0.169613, 0.169617, 0.169099", \
+            "0.18495, 0.18539, 0.185409, 0.185325, 0.185386, 0.185259, 0.185282" \
+          );
+        }
+      }
+      internal_power () {
+        related_pin : "RESET_B";
+        rise_power (scalar) {
+          values ( \
+            "0" \
+          );
+        }
+        fall_power (POWER_7x7ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          index_2 ("0.001, 0.0234, 0.039, 0.0648, 0.108, 0.18, 0.3");
+          values ( \
+            "0.145279, 0.145727, 0.145696, 0.145703, 0.145511, 0.145305, 0.144845", \
+            "0.144926, 0.145346, 0.14539, 0.145299, 0.145155, 0.14492, 0.144456", \
+            "0.14483, 0.145294, 0.145305, 0.145281, 0.145085, 0.144867, 0.144426", \
+            "0.144833, 0.14526, 0.145343, 0.145292, 0.145227, 0.145301, 0.144399", \
+            "0.145349, 0.145801, 0.145802, 0.145748, 0.14554, 0.145558, 0.145127", \
+            "0.147744, 0.148218, 0.148185, 0.14816, 0.148166, 0.147987, 0.147316", \
+            "0.153913, 0.154312, 0.154316, 0.154317, 0.154334, 0.154231, 0.154255" \
+          );
+        }
+      }
+    }
+    pin (CLK) {
+      clock : true;
+      direction : "input";
+      max_transition : 2.5074;
+      capacitance : 0.0217771;
+      rise_capacitance : 0.0227921;
+      rise_capacitance_range (0.0214961, 0.0235547);
+      fall_capacitance : 0.020593;
+      fall_capacitance_range (0.020593, 0.0233052);
+      timing () {
+        related_pin : "CLK";
+        timing_type : min_pulse_width;
+        rise_constraint (mpw_CONSTRAINT_4x4) {
+          index_1 ("0.0186, 0.51636, 1.263, 2.5074");
+          values ( \
+            "0.118256, 0.852051, 2.08496, 4.13818" \
+          );
+        }
+        fall_constraint (mpw_CONSTRAINT_4x4) {
+          index_1 ("0.0186, 0.51636, 1.263, 2.5074");
+          values ( \
+            "0.124664, 0.852051, 2.08496, 4.13818" \
+          );
+        }
+      }
+      internal_power () {
+        when : "(D * RESET_B * Q)";
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0248364, 0.0236219, 0.0236202, 0.0244441, 0.0271848, 0.0337578, 0.0489177" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0621788, 0.0609986, 0.0610255, 0.0619503, 0.0645073, 0.0715077, 0.0875683" \
+          );
+        }
+      }
+      internal_power () {
+        when : "(D * RESET_B * !Q)";
+        rise_power (scalar) {
+          values ( \
+            "0" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0628509, 0.0617112, 0.0617135, 0.0626557, 0.0652538, 0.0722241, 0.0883517" \
+          );
+        }
+      }
+      internal_power () {
+        when : "(D * !RESET_B * !Q)";
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0349656, 0.0338343, 0.0338223, 0.0346175, 0.0373973, 0.043933, 0.0588431" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0303696, 0.0292848, 0.0294588, 0.0304045, 0.0330892, 0.0399327, 0.055271" \
+          );
+        }
+      }
+      internal_power () {
+        when : "(!D * RESET_B * Q)";
+        rise_power (scalar) {
+          values ( \
+            "0" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.185693, 0.181463, 0.180071, 0.179802, 0.182269, 0.188885, 0.20402" \
+          );
+        }
+      }
+      internal_power () {
+        when : "(!D * RESET_B * !Q)";
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0363195, 0.035145, 0.0351368, 0.0360792, 0.0387077, 0.0453772, 0.0602831" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0267002, 0.0255907, 0.0257868, 0.0267289, 0.029434, 0.036259, 0.0515944" \
+          );
+        }
+      }
+      internal_power () {
+        when : "(!D * !RESET_B * !Q)";
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0418164, 0.0406547, 0.0406285, 0.0414009, 0.044174, 0.050751, 0.0656296" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0236537, 0.0225479, 0.0226981, 0.0236763, 0.0263536, 0.0331965, 0.0485321" \
+          );
+        }
+      }
+      internal_power () {
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0349656, 0.0338343, 0.0338223, 0.0346175, 0.0373973, 0.043933, 0.0588431" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0628509, 0.0617112, 0.0617135, 0.0626557, 0.0652538, 0.0722241, 0.0883517" \
+          );
+        }
+      }
+    }
+    pin (D) {
+      direction : "input";
+      nextstate_type : "data";
+      max_transition : 2.5074;
+      capacitance : 0.015033;
+      rise_capacitance : 0.014999;
+      rise_capacitance_range (0.0144222, 0.0155201);
+      fall_capacitance : 0.0150669;
+      fall_capacitance_range (0.0148178, 0.0154339);
+      timing () {
+        related_pin : "CLK";
+        sdf_edges : both_edges;
+        timing_type : hold_rising;
+        rise_constraint (CONSTRAINT_4x4) {
+          index_1 ("0.0186, 0.51636, 1.263, 2.5074");
+          index_2 ("0.0186, 0.51636, 1.263, 2.5074");
+          values ( \
+            "-0.051349, -0.00274232, 0.0267168, 0.0639326", \
+            "-0.174461, -0.137509, -0.103929, -0.0653783", \
+            "-0.242746, -0.229117, -0.196981, -0.156906", \
+            "-0.301389, -0.316733, -0.292261, -0.253832" \
+          );
+        }
+        fall_constraint (CONSTRAINT_4x4) {
+          index_1 ("0.0186, 0.51636, 1.263, 2.5074");
+          index_2 ("0.0186, 0.51636, 1.263, 2.5074");
+          values ( \
+            "-0.0244519, 0.0746283, 0.134731, 0.204248", \
+            "-0.16947, -0.0891261, -0.0252571, 0.0445817", \
+            "-0.26332, -0.216005, -0.159203, -0.0975823", \
+            "-0.352658, -0.349721, -0.309211, -0.253832" \
+          );
+        }
+      }
+      timing () {
+        related_pin : "CLK";
+        sdf_edges : both_edges;
+        timing_type : setup_rising;
+        rise_constraint (CONSTRAINT_4x4) {
+          index_1 ("0.0186, 0.51636, 1.263, 2.5074");
+          index_2 ("0.0186, 0.51636, 1.263, 2.5074");
+          values ( \
+            "0.459696, 0.384604, 0.343619, 0.303045", \
+            "0.588768, 0.514385, 0.47369, 0.430995", \
+            "0.669661, 0.593632, 0.555863, 0.51285", \
+            "0.74392, 0.668604, 0.631255, 0.590308" \
+          );
+        }
+        fall_constraint (CONSTRAINT_4x4) {
+          index_1 ("0.0186, 0.51636, 1.263, 2.5074");
+          index_2 ("0.0186, 0.51636, 1.263, 2.5074");
+          values ( \
+            "0.503709, 0.379612, 0.302471, 0.224792", \
+            "0.67113, 0.544942, 0.471067, 0.392509", \
+            "0.79825, 0.672305, 0.599037, 0.5185", \
+            "0.938203, 0.811552, 0.735778, 0.658193" \
+          );
+        }
+      }
+      internal_power () {
+        when : "CLK";
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0528137, 0.0520998, 0.0519423, 0.0520994, 0.0529021, 0.0551643, 0.0609002" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0543162, 0.0536262, 0.0534903, 0.053687, 0.0546121, 0.0571882, 0.0631484" \
+          );
+        }
+      }
+      internal_power () {
+        when : "(!CLK * RESET_B)";
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0899155, 0.0892604, 0.0890508, 0.0891118, 0.0898998, 0.0922135, 0.0980672" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0717071, 0.0709673, 0.0708136, 0.0708524, 0.0717732, 0.0744415, 0.080629" \
+          );
+        }
+      }
+      internal_power () {
+        when : "(!CLK * !RESET_B)";
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0551123, 0.0545129, 0.0543167, 0.0543085, 0.0548079, 0.0562968, 0.0602064" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0416795, 0.0411228, 0.0409711, 0.0409927, 0.0415169, 0.0432356, 0.0472178" \
+          );
+        }
+      }
+      internal_power () {
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0551123, 0.0545129, 0.0543167, 0.0543085, 0.0548079, 0.0562968, 0.0602064" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0543162, 0.0536262, 0.0534903, 0.053687, 0.0546121, 0.0571882, 0.0631484" \
+          );
+        }
+      }
+    }
+    pin (RESET_B) {
+      direction : "input";
+      max_transition : 2.5074;
+      capacitance : 0.0268603;
+      rise_capacitance : 0.0268882;
+      rise_capacitance_range (0.0239797, 0.0299546);
+      fall_capacitance : 0.0268371;
+      fall_capacitance_range (0.0244864, 0.0277791);
+      timing () {
+        related_pin : "CLK";
+        sdf_edges : both_edges;
+        timing_type : recovery_rising;
+        rise_constraint (CONSTRAINT_4x4) {
+          index_1 ("0.0186, 0.51636, 1.263, 2.5074");
+          index_2 ("0.0186, 0.51636, 1.263, 2.5074");
+          values ( \
+            "0.119814, 0.0551547, 0.0195752, -0.0207588", \
+            "0.269303, 0.193531, 0.156378, 0.11486", \
+            "0.404768, 0.318279, 0.277932, 0.23318", \
+            "0.560432, 0.473426, 0.427859, 0.3837" \
+          );
+        }
+      }
+      timing () {
+        related_pin : "CLK";
+        sdf_edges : both_edges;
+        timing_type : removal_rising;
+        rise_constraint (CONSTRAINT_4x4) {
+          index_1 ("0.0186, 0.51636, 1.263, 2.5074");
+          index_2 ("0.0186, 0.51636, 1.263, 2.5074");
+          values ( \
+            "-0.107588, -0.0451714, -0.0118599, 0.0261555", \
+            "-0.256824, -0.185892, -0.14851, -0.109362", \
+            "-0.384194, -0.307789, -0.267138, -0.22753", \
+            "-0.536146, -0.456932, -0.413734, -0.371894" \
+          );
+        }
+      }
+      timing () {
+        related_pin : "RESET_B";
+        timing_type : min_pulse_width;
+        fall_constraint (mpw_CONSTRAINT_4x4) {
+          index_1 ("0.0186, 0.51636, 1.263, 2.5074");
+          values ( \
+            "0.108643, 0.852051, 2.08496, 4.13818" \
+          );
+        }
+      }
+      internal_power () {
+        when : "(CLK * D * !Q)";
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0114009, 0.0110873, 0.0110361, 0.0111237, 0.0115413, 0.0133205, 0.0181053" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.172916, 0.171189, 0.170692, 0.170253, 0.171697, 0.177456, 0.192166" \
+          );
+        }
+      }
+      internal_power () {
+        when : "(CLK * !D * !Q)";
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0055026, 0.0055581, 0.00557405, 0.00558263, 0.00557938, 0.00558436, 0.00558213" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "-0.00408365, -0.00454635, -0.00464409, -0.00471429, -0.0047842, -0.00484575, -0.00492763" \
+          );
+        }
+      }
+      internal_power () {
+        when : "(!CLK * D * !Q)";
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0461696, 0.0454416, 0.0452787, 0.0451285, 0.0456385, 0.0480973, 0.0549524" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0262852, 0.0249192, 0.0244972, 0.02399, 0.0248594, 0.0280701, 0.0361194" \
+          );
+        }
+      }
+      internal_power () {
+        when : "(!CLK * !D * !Q)";
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.00895337, 0.00898778, 0.00900537, 0.0090143, 0.00902457, 0.00900399, 0.00901404" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "-0.0075353, -0.00786848, -0.00794049, -0.0079914, -0.00803446, -0.00807251, -0.00812644" \
+          );
+        }
+      }
+      internal_power () {
+        rise_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0114009, 0.0110873, 0.0110361, 0.0111237, 0.0115413, 0.0133205, 0.0181053" \
+          );
+        }
+        fall_power (passive_POWER_7x1ds1) {
+          index_1 ("0.0186, 0.0966, 0.174, 0.3294, 0.6408, 1.263, 2.5074");
+          values ( \
+            "0.0262852, 0.0249192, 0.0244972, 0.02399, 0.0248594, 0.0280701, 0.0361194" \
+          );
+        }
+      }
+    }
+    ff (IQ,IQN) {
+      clear : "!RESET_B";
+      clocked_on : "CLK";
+      next_state : "D";
+    }
+  }
+}
