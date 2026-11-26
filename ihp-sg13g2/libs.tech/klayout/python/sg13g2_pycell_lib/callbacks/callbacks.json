@@ -31,7 +31,8 @@
         "mos_cb.tcl",
         "guard_ring_cb.tcl",
         "rfmos_cb.tcl",
-        "npn_cb.tcl"
+        "npn_cb.tcl",
+        "tap_cb.tcl"
     ],
     "callbackDefinition": {
         "callbackList": [
@@ -362,6 +363,16 @@
                         "callback": "NLCB_npnG2V_le",
                         "pcellParameters": ["le"],
                         "usePcellParameterAsArgument": "no"
+                    }
+                ]
+            },
+            {
+                "devices": ["ptap1", "ntap1"],
+                "callbacks": [
+                    {
+                        "callback": "CbTap",
+                        "pcellParameters": ["Calculate", "R", "w", "l", "A", "Perim"],
+                        "usePcellParameterAsArgument": "yes"
                     }
                 ]
             }

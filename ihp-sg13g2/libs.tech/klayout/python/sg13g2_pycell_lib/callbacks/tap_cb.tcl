@@ -58,7 +58,7 @@ proc CbTap {param} {
     # get cell name to make procedure sharing with different parameter sets possible
     set cellId [iPDK_getCurrentInst]
     set cell   [iPDK_getInstCellName $cellId]
-    if {$cell == ptapSB} {
+    if {$cell == "ptapSB"} {
         set cell ptap1
     }
 
@@ -169,31 +169,31 @@ proc CbTap {param} {
                 set l $minL
             }
             if {[Greater $l $maxL 1u]} {
-                CbMessage "l set to its max. value $maxL"]
+                CbMessage "l set to its max. value $maxL"
                 set l $maxL
                 iPDK_setParamValue l [Ftos $l 3] $cellId
             }
         }  ;# l
         R {
             if {[Less $r $minR 1]} {
-                CbMessage "r set to its min. value $minR"]
+                CbMessage "r set to its min. value $minR"
                 set r $minR
             }
             if {[Greater $r $maxR 1]} {
-                CbMessage "r set to its max. value $maxR"]
+                CbMessage "r set to its max. value $maxR"
                 set r $maxR
                 iPDK_setParamValue R [Ftos $r 3] $cellId
             }
         }  ;# R
         A {
             if {[Less $A $minA 1p]} {
-                CbMessage "A set to its min. value $minA"]
+                CbMessage "A set to its min. value $minA"
                 set A $minA
             }
             if {[Greater $A $maxA 1p]} {
-                CbMessage "A set to its max. value $maxA"]
+                CbMessage "A set to its max. value $maxA"
                 set A $maxA
-                PDK_setParamValue A [Ftos $A 3] $cellId
+                iPDK_setParamValue A [Ftos $A 3] $cellId
             }
         }  ;# A
     }  ;#  switch
@@ -278,7 +278,7 @@ proc CbTap {param} {
                 if {$param == A} {
                     set l [CbRoundm [expr $A/$w] $SG13_GRID]
                 }
-                if{$param == A} {
+                if {$param == A} {
                     set l [CbRoundm [expr $A/$w] $SG13_GRID]
                     CbMessage "l <= ${l} required for given area"
                     return 0
@@ -290,7 +290,7 @@ proc CbTap {param} {
             if {$l > $maxL} {
                 set l $maxL
                 if {$param == A} {
-                    set w [CbRoundm [expr[$A/$l] $SG13_GRID]
+                    set w [CbRoundm [expr $A/$l] $SG13_GRID]
                 }
             }
             if {$l < $minL} {
